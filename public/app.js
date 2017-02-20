@@ -55,3 +55,19 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
       return new Date(dt * 1000);
     }
 }]);
+
+
+// CUSTOM DIRECTIVES
+weatherApp.directive('weatherPanel', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'directives/weatherPanel.htm',
+    replace: true,
+    scope: {
+      weatherDay: "=",
+      convertToStandard: "&",
+      convertToDate: "&",
+      dateFormat: "@"
+    }
+  }
+});
