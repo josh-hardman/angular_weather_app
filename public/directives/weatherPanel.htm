@@ -3,6 +3,10 @@
     <h3 class="panel-title">{{ convertToDate({ dt: weatherDay.dt }) | date: dateFormat }}</h3>
   </div>
   <div class="panel-body">
-    Daytime temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.day }) }}
+    <ul class="list-group">
+      <li class="list-group-item">Description: {{weatherDay.weather[0].description}}</li>
+      <li class="list-group-item">High: {{ convertToStandard({ daytimeTemp: weatherDay.temp.max }) }}°F</li>
+      <li class="list-group-item">Low: {{ convertToStandard({ daytimeTemp: weatherDay.temp.min }) }}°F</li>
+    </ul>
   </div>
 </div>
